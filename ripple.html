@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .ripple {width: 100px;height: 100px;background: brown; border-radius: 60%; margin: 100px; position: relative;}
+        .ripple::after, ripple::before{content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background:brown; border-radius: 50%;}
+        .ripple::after {animation: ripple 2s infinite;}
+        .ripple::before {animation: ripple 2s infinite 1s;}
+        @keyframes ripple {
+            0% {transform: scale(1.2); opacity: 1;}
+            100% {transform: scale(1.3); opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="ripple"></div>
+</body>
+</html>
